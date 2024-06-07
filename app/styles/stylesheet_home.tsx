@@ -52,11 +52,11 @@ export const styles = StyleSheet.create({
       position: 'absolute',
       bottom: 20, // Adjust this value to center the side buttons vertically
     },
-    leftButton: {
+    ChooseHP: {
       left: 20,
     },
-    rightButton: {
-      right: 20,
+    Restart: {
+      right: 10,
     },
     outwardText: {
       color: 'white',
@@ -74,5 +74,17 @@ export const styles = StyleSheet.create({
     },
     newButton: {
       bottom: 20, // Adjust this value to control the spacing between the buttons and the numbers
+    },
+    Players: {
+      right: 80,
+    },
+    Player_name: {
+      color: "white",
+      fontSize: 24,
+      transform: [{rotate: '180deg'}],
+    },
+    Player_name_2: {
+      color: "white",
+      fontSize: 24,
     },
 });
