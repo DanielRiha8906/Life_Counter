@@ -3,9 +3,9 @@ import React, { useState } from 'react';
 import * as eva from '@eva-design/eva';
 import { ApplicationProvider, Layout } from '@ui-kitten/components';
 import { View } from 'react-native';
-import { styles } from './styles/stylesheet_home';
-import MenuButtons from '../components/menu_buttons';
-import PlayerHP from '../components/PlayerHP';
+import { styles } from '@/app/styles/stylesheet_home';
+import MenuButtons from '@/components/menu_buttons';
+import PlayerHP from '@/components/PlayerHP';
 const App = () => {
   const [visible, setVisible] = useState(false);
   const [visible_choose_HP, setVisible_choose_HP] = useState(false);
@@ -45,6 +45,7 @@ const App = () => {
           playerName="Player 1"
           textStyle={styles.outwardText}
           containerStyle={styles.blueHalf}
+          top = {true}
         />
         <View style={styles.separator} />
         <PlayerHP
@@ -52,6 +53,7 @@ const App = () => {
           playerName="Player 2"
           textStyle={styles.inwardText}
           containerStyle={styles.greenHalf}
+          top = {false}
         />
         <MenuButtons
           visible={visible}

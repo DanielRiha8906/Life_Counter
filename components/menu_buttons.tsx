@@ -2,7 +2,7 @@
 import React from 'react';
 import { Button, Layout } from '@ui-kitten/components';
 import { View } from 'react-native';
-import { styles } from '../app/styles/stylesheet_home';
+import { styles } from '@/app/styles/stylesheet_home';
 import { router } from 'expo-router';
 
 const MenuButtons = ({
@@ -15,7 +15,7 @@ const MenuButtons = ({
   setHP,
   choose_hp,
   resetGame,
-}) => (
+}: any) => (
   <Layout style={styles.buttonWrapper}>
     <Button onPress={toggleButtons} style={styles.showMenuButton}>
       Show Menu

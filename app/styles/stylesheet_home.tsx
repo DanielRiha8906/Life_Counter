@@ -75,6 +75,9 @@ export const styles = StyleSheet.create({
     newButton: {
       bottom: 20, // Adjust this value to control the spacing between the buttons and the numbers
     },
+    newButton_upside: {
+      bottom: 380,
+    },
     Players: {
       right: 80,
     },

@@ -1,10 +1,10 @@
 // IncreaseButton.js
 import React from 'react';
 import { Button } from '@ui-kitten/components';
-import { styles } from '../../app/styles/stylesheet_home';
+import { styles } from '@/app/styles/stylesheet_home';
 
-const IncreaseButton_upside = ({ onPress }) => (
-  <Button style={styles.newButton} onPress={onPress}>
+const IncreaseButton_upside = ({ onPress }: any) => (
+  <Button style={styles.newButton_upside} onPress={onPress}>
     +
   </Button>
 );
