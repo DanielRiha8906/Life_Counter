@@ -1,4 +1,6 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+const screenWidth = Math.round(Dimensions.get('window').width);
+const screenHeight = Math.round(Dimensions.get('window').height);
 
 export const styles = StyleSheet.create({
     container: {
@@ -25,17 +27,17 @@ export const styles = StyleSheet.create({
       backgroundColor: 'blue',
       justifyContent: 'center',
       alignItems: 'center',
-      position: 'relative', // Ensure relative positioning for absolute children
+      position: 'relative', 
     },
     greenHalf: {
       flex: 1,
       backgroundColor: 'green',
       justifyContent: 'center',
       alignItems: 'center',
-      position: 'relative', // Ensure relative positioning for absolute children
+      position: 'relative', 
     },
     separator: {
-      height: 1,
+      height: 0,
       backgroundColor: 'white',
     },
     buttonWrapper: {
@@ -44,13 +46,14 @@ export const styles = StyleSheet.create({
       top: '50%',
       justifyContent: 'center',
       alignItems: 'center',
+      backgroundColor: 'transparent'
     },
     showMenuButton: {
       bottom: 20,
     },
     sideButton: {
       position: 'absolute',
-      bottom: 20, // Adjust this value to center the side buttons vertically
+      bottom: 20, 
     },
     ChooseHP: {
       left: 20,
@@ -70,10 +73,10 @@ export const styles = StyleSheet.create({
     newButtonsWrapper: {
       flexDirection: 'row',
       position: 'absolute',
-      bottom: 0, // Adjust this value to position the buttons vertically
-    },
+      bottom: 0,
+  },
     newButton: {
-      bottom: 20, // Adjust this value to control the spacing between the buttons and the numbers
+      bottom: 20, 
     },
     newButton_upside: {
       bottom: 380,
@@ -90,4 +93,32 @@ export const styles = StyleSheet.create({
       color: "white",
       fontSize: 24,
     },
-});
+    row: {
+      flexDirection: 'row',
+      flex: 1,
+    },
+    quadrant: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: 'green',
+    },
+    blue: {
+      backgroundColor: 'blue',
+    },
+    red: {
+      backgroundColor: 'red',
+    },
+    black: {
+      backgroundColor: 'black',
+    },
+    text: {
+      fontSize: 20,
+      color: 'black', // Adjust the color if necessary for visibility
+      transform: [{ rotate: '180deg' }],
+    },
+    text_bottom: {
+      fontSize: 20,
+      color: 'black', // Adjust the color if necessary for visibility
+    },
+  });

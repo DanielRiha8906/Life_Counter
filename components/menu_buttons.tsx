@@ -51,9 +51,10 @@ const MenuButtons = ({
         <Button style={[styles.bottomButtons, styles.leftBotButton]} onPress={() => router.push('/index')}>
           2
         </Button>
-        <Button style={[styles.bottomButtons, styles.middleBotButton]} onPress={() => router.push('/Multiple_people/3_players')}>
-          3
-        </Button>
+        
+        {/* <Button style={[styles.bottomButtons, styles.middleBotButton]} onPress={() => router.push('/Multiple_people/3_players')}>*/}
+        {/*   3 */}
+        {/* </Button>*/}
         <Button style={[styles.bottomButtons, styles.rightBotButton]} onPress={() => router.push('/Multiple_people/4_players')}>
           4
         </Button>

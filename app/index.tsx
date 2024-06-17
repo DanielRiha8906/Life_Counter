@@ -12,7 +12,17 @@ const App = () => {
   const [choose_hp, setChoose_hp] = useState(20);
   const [visible_choose_number_of_players, setVisible_choose_number_of_players] = useState(false);
 
-  const setHP = (val : any) => {
+  const [playerHP, setPlayerHP] = useState({
+    player1: 20,
+    player2: 20,
+  });
+  const resetGame = (hp: number) => {
+    setPlayerHP({
+      player1: hp,
+      player2: hp,
+    });
+  };
+  const setHP = (val: number) => {
     setChoose_hp(val);
     resetGame(val);
   };
@@ -29,7 +39,7 @@ const App = () => {
     setVisible_choose_HP(!visible_choose_HP);
   };
 
-
+  
   const chooseNumberOfPlayers = () => {
     setVisible_choose_number_of_players(!visible_choose_number_of_players);
   };
@@ -40,6 +50,7 @@ const App = () => {
         <PlayerHP
           initialHP={40}
           playerName="Player 1"
+          setHP={(hp) => setPlayerHP((prev) => ({ ...prev, player1: hp }))}
           textStyle={styles.outwardText}
           containerStyle={styles.blueHalf}
           top = {true}
@@ -48,6 +59,7 @@ const App = () => {
         <PlayerHP
           initialHP={20}
           playerName="Player 2"
+          setHP={(hp) => setPlayerHP((prev) => ({ ...prev, player2: hp }))}
           textStyle={styles.inwardText}
           containerStyle={styles.greenHalf}
           top = {false}
