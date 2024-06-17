@@ -19,38 +19,4 @@ const App = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'row',
-    flexWrap: 'wrap',
-  },
-  quadrant: {
-    width: '50%',
-    height: '50%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'green',
-  },
-  blue: {
-    backgroundColor: 'blue',
-  },
-  red: {
-    backgroundColor: 'red',
-  },
-  white: {
-    backgroundColor: 'white',
-  },
-  text: {
-    fontSize: 20,
-    color: 'black', // Adjust the color if necessary for visibility
-    transform: [{rotate: '180deg'}],
-},
-  text_bottom: {
-    fontSize: 20,
-    color: 'black', // Adjust the color if necessary for visibility
-  },
-});
-
 export default App;

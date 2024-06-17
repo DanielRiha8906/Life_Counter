@@ -29,9 +29,6 @@ const App = () => {
     setVisible_choose_HP(!visible_choose_HP);
   };
 
-  const resetGame = (hp: any) => {
-    setChoose_hp(hp);
-  };
 
   const chooseNumberOfPlayers = () => {
     setVisible_choose_number_of_players(!visible_choose_number_of_players);
