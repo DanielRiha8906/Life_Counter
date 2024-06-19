@@ -6,6 +6,7 @@ import { View } from 'react-native';
 import { styles } from '@/app/styles/stylesheet_home';
 import MenuButtons from '@/components/menu_buttons';
 import PlayerHP from '@/components/PlayerHP';
+import Nav from '@/components/nav';
 
 
 const App = () => {
@@ -49,6 +50,7 @@ const App = () => {
   return (
     <>
     <ApplicationProvider {...eva} theme={eva.light}>
+      <Nav/>
       <Layout style={styles.container}>
         <PlayerHP
           initialHP={playerHP.player1}

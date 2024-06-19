@@ -7,7 +7,6 @@ import 'react-native-reanimated';
 import { useColorScheme } from '@/hooks/useColorScheme';
 import React from 'react';
 import * as eva from '@eva-design/eva';
-import { ApplicationProvider, Layout, Text } from '@ui-kitten/components';
 
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.

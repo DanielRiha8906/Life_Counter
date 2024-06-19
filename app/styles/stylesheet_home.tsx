@@ -125,4 +125,17 @@ export const styles = StyleSheet.create({
       fontSize: 20,
       color: 'black', // Adjust the color if necessary for visibility
     },
+    archive: {
+      position: 'absolute',
+      top: 0,
+      right: 0,
+      width: 50,
+      height: 50,
+      padding: 0,
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: 'green',
+      zIndex:10
+    },
   });
