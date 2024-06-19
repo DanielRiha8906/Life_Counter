@@ -4,7 +4,7 @@ import { Button, Layout } from '@ui-kitten/components';
 import { View } from 'react-native';
 import { styles } from '@/app/styles/stylesheet_home';
 import { router } from 'expo-router';
-
+import * as Icons from "react-native-heroicons/solid";
 const MenuButtons = ({
   visible,
   toggleButtons,
@@ -18,18 +18,21 @@ const MenuButtons = ({
 }: any) => (
   <Layout style={styles.buttonWrapper}>
     <Button onPress={toggleButtons} style={styles.showMenuButton}>
-      Show Menu
+      <>
+      <Icons.Cog6ToothIcon/>
+      Menu
+      </>
     </Button>
     {visible && (
       <>
         <Button style={[styles.sideButton, styles.ChooseHP]} onPress={toggleNewButtons}>
-          HP
+        <Icons.HeartIcon/>
         </Button>
         <Button style={[styles.sideButton, styles.Restart]} onPress={() => resetGame(choose_hp)}>
-          Again
+          <Icons.ArrowPathIcon/>
         </Button>
         <Button style={[styles.sideButton, styles.Players]} onPress={chooseNumberOfPlayers}>
-          Ppl
+          <Icons.UserIcon/>
         </Button>
       </>
     )}
@@ -48,15 +51,15 @@ const MenuButtons = ({
     )}
     {visible_choose_number_of_players && (
       <>
-        <Button style={[styles.bottomButtons, styles.leftBotButton]} onPress={() => router.push('/index')}>
-          2
+        <Button style={[styles.bottomButtons, styles.leftBotButton]} onPress={() => router.push('/')}>
+          <Icons.UsersIcon/>
         </Button>
         
         {/* <Button style={[styles.bottomButtons, styles.middleBotButton]} onPress={() => router.push('/Multiple_people/3_players')}>*/}
         {/*   3 */}
         {/* </Button>*/}
         <Button style={[styles.bottomButtons, styles.rightBotButton]} onPress={() => router.push('/Multiple_people/4_players')}>
-          4
+          <Icons.UserGroupIcon/>
         </Button>
       </>
     )}

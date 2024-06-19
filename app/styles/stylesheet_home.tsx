@@ -50,6 +50,10 @@ export const styles = StyleSheet.create({
     },
     showMenuButton: {
       bottom: 20,
+      flex: 1,
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
     },
     sideButton: {
       position: 'absolute',

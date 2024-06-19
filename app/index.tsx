@@ -6,6 +6,8 @@ import { View } from 'react-native';
 import { styles } from '@/app/styles/stylesheet_home';
 import MenuButtons from '@/components/menu_buttons';
 import PlayerHP from '@/components/PlayerHP';
+
+
 const App = () => {
   const [visible, setVisible] = useState(false);
   const [visible_choose_HP, setVisible_choose_HP] = useState(false);
@@ -45,10 +47,11 @@ const App = () => {
   };
 
   return (
+    <>
     <ApplicationProvider {...eva} theme={eva.light}>
       <Layout style={styles.container}>
         <PlayerHP
-          initialHP={40}
+          initialHP={playerHP.player1}
           playerName="Player 1"
           setHP={(hp) => setPlayerHP((prev) => ({ ...prev, player1: hp }))}
           textStyle={styles.outwardText}
@@ -57,13 +60,13 @@ const App = () => {
         />
         <View style={styles.separator} />
         <PlayerHP
-          initialHP={20}
+          initialHP={playerHP.player2}
           playerName="Player 2"
           setHP={(hp) => setPlayerHP((prev) => ({ ...prev, player2: hp }))}
           textStyle={styles.inwardText}
           containerStyle={styles.greenHalf}
           top = {false}
-        />
+          />
         <MenuButtons
           visible={visible}
           toggleButtons={toggleButtons}
@@ -74,9 +77,10 @@ const App = () => {
           setHP={setHP}
           choose_hp={choose_hp}
           resetGame={resetGame}
-        />
+          />
       </Layout>
     </ApplicationProvider>
+    </>
   );
 };
 
