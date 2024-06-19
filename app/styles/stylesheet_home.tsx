@@ -83,7 +83,7 @@ export const styles = StyleSheet.create({
       bottom: 20, 
     },
     newButton_upside: {
-      bottom: 380,
+      bottom: 340,
     },
     Players: {
       right: 80,
@@ -138,4 +138,9 @@ export const styles = StyleSheet.create({
       backgroundColor: 'green',
       zIndex:10
     },
+    winnerText: {
+      color: 'white',
+      fontSize: 86,
+
+    }
   });
