@@ -127,15 +127,15 @@ export const styles = StyleSheet.create({
     },
     archive: {
       position: 'absolute',
-      top: 0,
-      right: 0,
+      top: 415,
+      right: 275,
       width: 50,
       height: 50,
       padding: 0,
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: 'green',
+      backgroundColor: 'black',
       zIndex:10
     },
     winnerText: {

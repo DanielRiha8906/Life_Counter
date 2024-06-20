@@ -1,19 +1,13 @@
-import { TouchableHighlight } from 'react-native';
-import * as Icons from "react-native-heroicons/outline";
+import React from 'react';
+import { Button } from '@ui-kitten/components';
 import { styles } from '@/app/styles/stylesheet_home';
 import { router } from 'expo-router';
-
-function Icon() {
-    return (
-        <Icons.ArchiveBoxIcon width={32} height={32}/>
-    )
-}
+import * as Icons from "react-native-heroicons/outline";
 
 export default function Nav() {
-    return(
-        <TouchableHighlight style={styles.archive} onPress={() => router.push('/archive')}>
-            <Icon/>
-        </TouchableHighlight>
-    )
-
+  return (
+    <Button style={styles.archive} onPress={() => router.push('/archive')}>
+      <Icons.ArchiveBoxIcon width={24} height={24} />
+    </Button>
+  );
 }

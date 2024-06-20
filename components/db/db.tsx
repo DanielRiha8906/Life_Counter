@@ -22,7 +22,17 @@ const createTable = async () => {
     console.error('Error creating table:', error);
   }
 };
-
+const reset_database = async () => {
+  const query = `
+    DROP TABLE IF EXISTS Match_History;
+  `;
+  try {
+    await db.execAsync(query);
+    console.log('Table deleted successfully.');
+  } catch (error) {
+    console.error('Error deleting table:', error);
+  }
+}
 const addMatch = async (players: any, winner: number) => {
   const query = `
     INSERT INTO Match_History (player1, player2, player3, player4, winner)
@@ -75,4 +85,4 @@ const getMatches = async () => {
   }
 };
 
-export { createTable, addMatch, getMatches };
+export { createTable, addMatch, getMatches, reset_database };
