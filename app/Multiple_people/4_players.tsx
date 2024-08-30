@@ -12,7 +12,7 @@ import * as DB from '@/components/db/db';
 const App = () => {
   const [visible, setVisible] = useState(false);
   const [visible_choose_HP, setVisible_choose_HP] = useState(false);
-  const [choose_hp, setChoose_hp] = useState(20);
+  const [choose_hp, setChoose_hp] = useState(40);
   const [visible_choose_number_of_players, setVisible_choose_number_of_players] = useState(false);
   const [winner, setWinner] = useState<number>(0);
 
@@ -41,12 +41,6 @@ const App = () => {
       newWinner = 3;
     }
 
-    // Hide winner selection initially
-    setVisible_winner(true);
-    setTimeout(() => {
-      setVisible_choose_HP(true);
-    }, 500);
-    
     DB.addMatch(playerHP, newWinner);
     
     // Set player HPs to the chosen value

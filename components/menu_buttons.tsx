@@ -35,7 +35,7 @@ const MenuButtons = ({
         <Button style={[styles.sideButton, styles.Restart]} onPress={() => resetGame(choose_hp)}>
           <Icons.ArrowPathIcon/>
         </Button>
-        <Button style={[styles.sideButton, styles.Players]} onPress={chooseNumberOfPlayers}>
+        <Button style={[styles.sideButton, styles.Players]} onPress={chooseNumberOfPlayers}> 
           <Icons.UserIcon/>
         </Button>
       </>

@@ -5,6 +5,7 @@ import { ApplicationProvider, Button } from '@ui-kitten/components';
 import * as Icons from "react-native-heroicons/solid";
 import { Match } from '@/types/types';
 import * as eva from '@eva-design/eva';
+import { styles } from '@/app/styles/stylesheet_home';
 const MatchHistoryScreen = () => {
   const [matches, setMatches] = useState<Match[]>([]); // Use Match[] type
 
@@ -35,7 +36,7 @@ const MatchHistoryScreen = () => {
 
   return (
     <ApplicationProvider {...eva} theme={eva.light}>
-    <View style={styles.container}>
+    <View style={styles.container_archive}>
       <Text style={styles.header}>Match History</Text>
       <FlatList
         data={matches}
@@ -49,37 +50,5 @@ const MatchHistoryScreen = () => {
     </ApplicationProvider>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 16,
-    backgroundColor: '#f8f8f8',
-  },
-  header: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    marginBottom: 16,
-  },
-  card: {
-    padding: 16,
-    backgroundColor: '#fff',
-    borderRadius: 8,
-    marginBottom: 16,
-    shadowColor: '#000',
-    shadowOffset: { width: 0, height: 1 },
-    shadowOpacity: 0.3,
-    shadowRadius: 2,
-    elevation: 3,
-  },
-  title: {
-    fontSize: 18,
-    fontWeight: 'bold',
-    marginBottom: 8,
-  },
-  resetButton: {
-    marginTop: 16,
-  },
-});
 
 export default MatchHistoryScreen;

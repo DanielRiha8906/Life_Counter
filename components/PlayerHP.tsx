@@ -13,9 +13,10 @@ type Player = {
   textStyle: any;
   containerStyle: any;
   top?: boolean;
+  red?: boolean;
 };
 
-const PlayerHP = ({ initialHP, setHP, playerName, textStyle, containerStyle, top }: Player) => {
+const PlayerHP = ({ initialHP, setHP, playerName, textStyle, containerStyle, top, red }: Player) => {
   const playerStyle = top ? styles.Player_name : styles.Player_name_2;
   const [hp, updateHP] = useState(initialHP);
 
@@ -37,16 +38,38 @@ const PlayerHP = ({ initialHP, setHP, playerName, textStyle, containerStyle, top
 
   return (
     <View style={containerStyle}>
-      {top ? (
+      {top && red ? (
         <>
           <Text style={playerStyle}>{playerName}</Text>
           <Text style={textStyle}>{hp}</Text>
-          <View style={styles.newButtonsWrapper}>
+          <View style={styles.newButtonsWrapper_red}>
             <IncreaseButton_upside onPress={increaseHP} />
             <DecreaseButton_upside onPress={decreaseHP} />
           </View>
         </>
-      ) : (
+      ) : top && !red ? (
+
+        <>
+          <Text style={textStyle}>{hp}</Text>
+          <Text style={playerStyle}>{playerName}</Text>
+          <View style={styles.newButtonsWrapper}>
+            <IncreaseButton onPress={increaseHP} />
+            <DecreaseButton onPress={decreaseHP} />
+          </View>
+        </>
+      )
+     : red ? (
+       
+      <>
+          <Text style={textStyle}>{hp}</Text>
+          <Text style={playerStyle}>{playerName}</Text>
+          <View style={styles.newButtonsWrapper_red}>
+            <DecreaseButton onPress={decreaseHP} />
+            <IncreaseButton onPress={increaseHP} />
+          </View>
+        </>
+     )
+     : (
         <>
           <Text style={textStyle}>{hp}</Text>
           <Text style={playerStyle}>{playerName}</Text>
@@ -55,7 +78,9 @@ const PlayerHP = ({ initialHP, setHP, playerName, textStyle, containerStyle, top
             <IncreaseButton onPress={increaseHP} />
           </View>
         </>
-      )}
+     )
+
+    }
     </View>
   );
 };

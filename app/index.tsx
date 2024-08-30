@@ -8,6 +8,7 @@ import PlayerHP from '@/components/PlayerHP';
 import Nav from '@/components/nav';
 import { players } from '@/types/types';
 import * as DB from '@/components/db/db';
+import Colorpicker from '@/components/Colorpicker';
 
 const App = () => {
   const [visible, setVisible] = useState(false);
@@ -15,10 +16,13 @@ const App = () => {
   const [choose_hp, setChoose_hp] = useState(20);
   const [visible_choose_number_of_players, setVisible_choose_number_of_players] = useState(false);
   const [winner, setWinner] = useState<number>(0);
+  const [colors, setColors] = useState(false);
+  const [red, setRed] = useState(false);
   const [playerHP, setPlayerHP] = useState<players>({
     player1: 20,
     player2: 20,
   });
+
 
   const resetGame = (hp: number) => {
     DB.createTable();
@@ -42,10 +46,20 @@ const App = () => {
     setChoose_hp(val);
     resetGame(val);
   };
-
+  const changeColors = () => {
+    setRed(!red);
+  }
   const toggleButtons = () => {
     setVisible(!visible);
-    if (visible) {
+    if (!visible) {
+      setVisible_choose_HP(false);
+      setVisible_choose_number_of_players(false);
+    }
+  };
+  const toggleColors = () => {
+    setColors(!colors);
+    if (!colors) {
+      setVisible(false);
       setVisible_choose_HP(false);
       setVisible_choose_number_of_players(false);
     }
@@ -60,8 +74,10 @@ const App = () => {
   };
 
   return (
+    
     <ApplicationProvider {...eva} theme={eva.light}>
       <Nav />
+      <Colorpicker changeColors={changeColors} toggleColors={toggleColors} colors={colors} red={red}/>
       <View style={styles.separator}>
         <Text style={styles.winnerText}>Choose Winner</Text>
         <Button onPress={() => setWinner(0)}>Player 1</Button>
@@ -82,7 +98,7 @@ const App = () => {
           playerName="Player 2"
           setHP={(hp) => setPlayerHP((prev) => ({ ...prev, player2: hp }))}
           textStyle={styles.inwardText}
-          containerStyle={styles.greenHalf}
+          containerStyle={red ? styles.redHalf : styles.greenHalf}
           top={false}
         />
         <MenuButtons
